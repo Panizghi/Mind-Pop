@@ -3,6 +3,7 @@
 const express = require("express"); 
 const bodyParser = require("body-parser");
 const app = express(); //represent express module 
+const date = require(__dirname +"/date.js"); //local module
 var items =[]; //save as collection rather than using single varible to prevent replacement 
 
 app.set('view engine','ejs');
@@ -15,13 +16,8 @@ app.use(express.static("public"));
 //GET METHOD  
 // "/" location of the request is at home root 
 app.get("/",function(req,res){
-var today = new Date();
-var options ={
-    weekday : "long",
-    day :"numeric",
-    month :"long"
-};
-var day = today.toLocaleDateString("en-US",options);
+
+let day = date();
 
 //use render to send variable to html 
 res.render("list",{kindOfDay :day, newlistitems :items});
