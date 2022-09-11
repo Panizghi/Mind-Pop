@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mind Pop </title>
+    </head>
+    <body>
+        <!--the tag tha has been used output the value into the html-->
+        <h1><%= kindOfDay %></h1>
+        <ul>
+        <!--tags that has been used from EJS doc '< %' Scriptlet tag, for control-flow, no output
+        < %= Outputs the value into the template (HTML escaped)
+        add new item to the list by creating new li object-->
+         <% for(var i=0 ; i <newlistitems.length; i++){ %>
+            <li><%= newlistitems[i] %></li>
+         <% } %>
+        </ul>
+
+        <form class="" action="/" method="post">
+            <input type="text" name="newitem" >
+            <button type="submit" name ="button">Add</button>
+        </form>
+
+    </body>
+</html>
