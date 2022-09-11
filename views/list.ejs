@@ -3,23 +3,39 @@
     <head>
         <meta charset="utf-8">
         <title>Mind Pop </title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!--the tag tha has been used output the value into the html-->
-        <h1><%= kindOfDay %></h1>
-        <ul>
+        <div class="box" id="heading">
+            <!--the tag tha has been used output the value into the html-->
+            <h1><%= kindOfDay %></h1>
+        </div>
+
+
         <!--tags that has been used from EJS doc '< %' Scriptlet tag, for control-flow, no output
         < %= Outputs the value into the template (HTML escaped)
         add new item to the list by creating new li object-->
-         <% for(var i=0 ; i <newlistitems.length; i++){ %>
-            <li><%= newlistitems[i] %></li>
-         <% } %>
-        </ul>
+        <div class="box">
+            <% for(var i=0 ; i <newlistitems.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= newlistitems[i] %></p>
+         
+                </div>
+            <% } %>
+            <form class="item" action="/" method="post">
+                <input type="text" name="newitem" placeholder="add you mind pop here!" autocomplete="off">
+                <button type="submit" name ="button">+</button>
+            </form>
+        </div>
+        
+        
+       
+         
+            
+        
 
-        <form class="" action="/" method="post">
-            <input type="text" name="newitem" >
-            <button type="submit" name ="button">Add</button>
-        </form>
+      
 
     </body>
 </html>

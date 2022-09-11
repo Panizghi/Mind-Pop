@@ -9,6 +9,8 @@ app.set('view engine','ejs');
 //use urlencoded mode to parse data come from html form 
 //extended allows us to post extended object 
 app.use(bodyParser.urlencoded({extended: true}));
+//public folder will have static functionallity 
+app.use(express.static("public"));
 
 //GET METHOD  
 // "/" location of the request is at home root 
